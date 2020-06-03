@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Drum Kit</title>
+</head>
+<body>
+
+
+    <div class="background">
+
+        <div class="title">
+
+            <h1>Drum Kit</h1>
+    
+        </div>
+    
+        <div class="keyboard">
+
+            <div data-key="65" class="keys"> 
+    
+                <div>
+                    <kbd>A</kbd>
+                    <span class="sound">Clap</span>
+                </div>
+        
+            </div>
+    
+            <div data-key="83" class="keys"> 
+        
+                <div>
+                    <kbd>S</kbd>
+                    <span class="sound">CHat</span>
+                </div>
+        
+            </div>
+    
+            <div data-key="68" class="keys"> 
+        
+                <div>
+                    <kbd>D</kbd>
+                    <span class="sound">Cymbal</span>
+                </div>
+        
+            </div>
+    
+            <div data-key="70" class="keys"> 
+        
+                <div>
+                    <kbd>F</kbd>
+                    <span class="sound">HfHat</span>
+                </div>
+        
+            </div>
+    
+            <div data-key="71" class="keys"> 
+        
+                <div>
+                    <kbd>G</kbd>
+                    <span class="sound">Kick</span>
+                </div>
+        
+            </div>
+    
+            <div data-key="72" class="keys"> 
+        
+                <div>
+                    <kbd>H</kbd>
+                    <span class="sound">Snare</span>
+                </div>
+        
+            </div>
+    
+            <div data-key="74" class="keys"> 
+        
+                <div>
+                    <kbd>J</kbd>
+                    <span class="sound">Tom</span>
+                </div>
+        
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="83" src="sounds/cihat.wav"></audio>
+    <audio data-key="68" src="sounds/cymbal.wav"></audio>
+    <audio data-key="70" src="sounds/hfhat.wav"></audio>
+    <audio data-key="71" src="sounds/kick.wav"></audio>
+    <audio data-key="72" src="sounds/snare.wav"></audio>
+    <audio data-key="74" src="sounds/tom.wav"></audio>
+
+
+
+<script>
+
+window.addEventListener('keydown', e => {
+
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    audio.currentTime = 0;
+    audio.play();
+});
+
+</script>
+
+</body>
+</html>
